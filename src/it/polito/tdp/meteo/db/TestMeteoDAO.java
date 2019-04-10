@@ -11,11 +11,13 @@ public class TestMeteoDAO {
 		MeteoDAO dao = new MeteoDAO();
 
 		List<Rilevamento> list = dao.getAllRilevamenti();
+		List<String> listadati = dao.getUmiditàavg(3);
 
 		// STAMPA: localita, giorno, mese, anno, umidita (%)
 		for (Rilevamento r : list) {
 			System.out.format("%-10s %2td/%2$2tm/%2$4tY %3d%%\n", r.getLocalita(), r.getData(), r.getUmidita());
 		}
+		System.out.println(listadati.toString());
 		
 //		System.out.println(dao.getAllRilevamentiLocalitaMese(1, "Genova"));
 //		System.out.println(dao.getAvgRilevamentiLocalitaMese(1, "Genova"));
